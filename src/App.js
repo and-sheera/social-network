@@ -41,11 +41,11 @@ const App = (props) => {
               <Navbar state={props.state.sidebar}/>
               <div className='app-wrapper-content'>
                   <Route path='/dialogs'
-                         render={ () => <Dialogs state={props.state.dialogsPage}/> } />
+                         render={ () => <Dialogs state={props.state.dialogsPage}
+                                                 dispatch={props.dispatch} /> } />
                   <Route path='/profile'
                          render={ () => <Profile state={props.state.profilePage}
-                                                 addPost={props.addPost}
-                                                 updateNewPostText={props.updateNewPostText}/> } />
+                                                 dispatch={props.dispatch} /> } />
                   <Route path='/news' render={ () => <News/> } />
                   <Route path='/music' render={ () => <Music/> } />
                   <Route path='/settings' render={ () => <Settings/> } />
