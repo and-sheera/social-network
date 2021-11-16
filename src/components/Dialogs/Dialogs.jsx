@@ -6,20 +6,22 @@ import { sendMessageActionCreator, updateNewMessageTextActionCreator } from '../
 
 const Dialogs = (props) => {
 
+    let state = props.store.getState().dialogsPage
+
     let dialogsElements =
-        props.state.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>);
+        state.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>);
     let messagesElements =
-        props.state.messages.map(message => <Message message={message.message}/>);
+        state.messages.map(message => <Message message={message.message}/>);
 
     let newMessage = React.createRef();
 
     let sendMessage = () => {
-        props.dispatch(sendMessageActionCreator())
+        props.store.dispatch(sendMessageActionCreator())
     }
 
     let onTextAreaChange = () => {
         let text = newMessage.current.value;
-        props.dispatch(updateNewMessageTextActionCreator(text));
+        props.store.dispatch(updateNewMessageTextActionCreator(text));
     }
     return (
         <div className={s.dialogs}>
@@ -30,7 +32,7 @@ const Dialogs = (props) => {
                 <div className={s.innerChat}>
                     {messagesElements}
                 </div>
-                <textarea ref={newMessage} onChange={onTextAreaChange} value={props.state.newMessageText}></textarea>
+                <textarea ref={newMessage} onChange={onTextAreaChange} value={state.newMessageText}></textarea>
                 <button onClick={sendMessage}>Send</button>
             </div>
         </div>
