@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 10fr;
@@ -18,6 +22,7 @@
 }
 
 .messages {
+    position: relative;
     border: 1px solid red;
     border-radius: 10px;
     margin-left: 10px;
@@ -36,4 +41,28 @@
     border-radius: 10px 10px 0 10px;
     align-self: flex-end;
     width: fit-content;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 25px;
+}
+
+textarea:focus-visible {
+    outline: none;
+}
+
+.sendMess {
+    position: absolute;
+    bottom: 14px;
+    right: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    cursor: pointer;
+    background-color: yellow;
 }

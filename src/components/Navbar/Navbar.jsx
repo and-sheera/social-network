@@ -2,10 +2,8 @@ import s from './Navbar.module.css';
 import {NavLink} from "react-router-dom";
 import FriendsItem from "./FriendsItem/FriendsItem";
 
-function Navbar(props) {
-
-    let friendsElements = props.state.friends.map( friend => <FriendsItem imgPath={friend.imgPath} name={friend.name} />)
-
+const Navbar = (props) => {
+    let friendsElements = props.sidebar.friends.map( friend => <FriendsItem imgPath={friend.imgPath} name={friend.name} />)
     return (
         <nav className={s.nav}>
             <div className={s.item}>
