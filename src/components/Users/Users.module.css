@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+}
+
+.userItem:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.userItem {
+  display: flex;
+  padding: 10px;
+  background-color: rgb(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.leftPart {
+  width: 100px;
+  margin-right: 10px;
+}
+
+.leftPart img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.leftPart button {
+  margin-top: 10px;
+  width: 100%;
+  min-height: 20px;
+  outline: none;
+  border: 0;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: ease 0.4s;
+}
+
+.leftPart button.follow {
+  background-color: white;
+  color: orange;
+}
+
+.leftPart button.follow:hover {
+  background-color: orange;
+  color: white;
+}
+
+.leftPart button.unfollow {
+  background-color: orange;
+  color: white;
+}
+
+.leftPart button.unfollow:hover {
+  background-color: white;
+  color: orange;
+}
+
+
+.mainPart {
+  width: calc(100% - 100px - 10px);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+}
+
+.about div:first-child {
+  font-size: 20px;
+}
+
+.about div:last-child {
+  width: fit-content;
+  padding: 7px;
+  border-radius: 10px 10px 10px 0;
+  background-color: yellow;
+  margin-top: auto;
+}
